@@ -1,0 +1,29 @@
+.migraine-button {
+  width: 70px;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+ion-label {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+ion-tab-bar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+  --color-selected: #8826E4 !important;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  ion-tab-button {
+    --background: transparent;
+  }
+  
+}

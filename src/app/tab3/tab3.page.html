@@ -1,0 +1,14 @@
+
+<ion-content [ngClass]="migraineS ? 'migraine-ion-content' : 'no-migraine-ion-content'" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <p class="migraine-text"> I have a migraine </p>
+  <div class="button-container">
+    <img #animation class="migraine-image-animation-1" src="assets/images/animation-circle.png" />
+    <button class="migraine-button" (click)="startRecording()" block>
+      <img class="migraine-image" src="assets/images/migraine-button.svg" />
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,74 @@
+.migraine-button {
+  background-color: transparent;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no-migraine-ion-content  {
+  --background: url("../../assets/images/purple-background.png") 0 0/100% 100%
+    no-repeat;
+  position: absolute;
+  top: 2rem;
+}
+
+.migraine-ion-content {
+  --background: url("../../assets/images/green-background.png") 0 0/100% 100%
+    no-repeat;
+  position: absolute;
+  top: 2rem;
+}
+
+ion-header {
+  position: absolute;
+  top: 5rem;
+}
+
+ion-title {
+  color: white;
+}
+
+.migraine-text {
+  color: white;
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Noto Sans";
+  font-weight: bolder;
+  font-size: 1.2rem;
+  font-style: bolder;
+  font-weight: bolder;
+}
+
+.migraine-image {
+  width: 90%;
+}
+
+.migraine-image-animation-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.1;
+  max-width: 90%;
+}
+
+.bounce {
+  animation: bounce 1.3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: scale(2) translate(-25%, -25%);
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
