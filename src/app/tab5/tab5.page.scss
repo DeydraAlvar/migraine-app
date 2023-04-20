@@ -1,1 +1,206 @@
+.ion-content {
+  --overflow: hidden;
+}
+.world-map {
+  content: url("../../assets/images/world.jpeg");
+  height: 97%;
+  width: 100%;
+}
 
+.map-header {
+  position: absolute;
+  top: 0;
+  height: 100px;
+  --background: rgba(0, 0, 0, 0.5);
+}
+
+.map-toolbar {
+  width: 100%;
+  height: 100%;
+  --background: rgba(0, 0, 0, 0.5);
+}
+
+ion-title {
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.zoomIn {
+  animation: zoomIn 2.3s linear;
+}
+
+@keyframes zoomIn {
+  50% {
+    transform: scale(1.5) translateY(10%);
+  }
+  100% {
+    transform: scale(2.5) translateY(20%);
+  }
+}
+
+.city-map {
+  content: url("../../assets/images/city.jpeg");
+  height: 97%;
+  width: 100%;
+  opacity: 1;
+  animation: showImage 1s linear;
+
+}
+
+@keyframes showImage {
+    0%{
+        opacity: 0.1;
+    }
+
+    20%{
+        opacity: 0.3
+    }
+
+    40%{
+        opacity: 0.5
+    }
+    60%{ 
+        opacity: 0.7
+    }
+
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+
+.green-pin-1{
+    position: absolute;
+    top: 13vh;
+    left: 65vw;
+    opacity: 0;
+}
+.green-pin-2{
+    position: absolute;
+    top: 20vh;
+    left: 76vw;
+    opacity: 0;
+
+}
+
+.green-pin-3{
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
+    opacity: 0;
+
+}
+.green-pin-4{
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+    opacity: 0;
+
+}
+.green-pin-5{
+    position: absolute;
+    top: 45vh;
+    left: 50vw;
+    opacity: 0;
+
+}
+.green-pin-6{
+    position: absolute;
+    top: 70vh;
+    left: 75vw;
+    opacity: 0;
+}
+
+.custom-pin-1{
+    position: absolute;
+    top: 13vh;
+    left: 75vw;
+    opacity: 0;
+}
+
+.custom-pin-2{
+    position: absolute;
+    top: 75vh;
+    left: 40vw;
+    opacity: 0;
+}
+.custom-pin-3{
+    position: absolute;
+    top: 45vh;
+    left: 67vw;
+    opacity: 0;
+}
+.custom-pin-4{
+    position: absolute;
+    top: 60vh;
+    left: 20vw;
+    opacity: 0;
+}
+
+.purple-pin{
+    position: absolute;
+    top: 48vh;
+    left: 17vw;
+    opacity: 0;
+    height: 100px;
+}
+
+.trigger-pin{
+    position: absolute;
+    top: 35vh;
+    left: 47vw;
+    opacity: 0;
+}
+.animate-pin{
+   
+    animation: bouncePin 0.5s linear;
+}
+
+.activated-pin{
+     opacity: 1;
+}
+
+
+@keyframes bouncePin {
+    0%{
+        opacity: 0.1;
+    }
+
+    20%{
+        opacity: 1
+    }
+    40%{ 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    70%{ 
+        transform: scale(1.6);
+    }
+    100%{ 
+        transform: scale(1.2);
+    }
+    
+}
+
+.click-pin-animation{
+    animation: clickPin .4s linear;
+}
+
+
+@keyframes clickPin {
+    10%{ 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    50%{ 
+        transform: scale(1.6);
+    }
+    100%{ 
+        transform: scale(1.2);
+    }  
+}

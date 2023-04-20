@@ -1,0 +1,102 @@
+.no-migraine-ion-content {
+  --background: url("../../assets/images/purple-background.png") 0 0/100% 100%
+    no-repeat;
+}
+
+.migraine-ion-content {
+  --background: url("../../assets/images/green-background.png") 0 0/100% 100%
+    no-repeat;
+}
+
+.person-name {
+  color: white;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.person-item {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  --background: transparent;
+  margin-top: 3rem;
+}
+
+.feed-title {
+  color: white;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 3rem;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+}
+
+.first-card-container {
+  background: linear-gradient(180deg, #5d59e9 0%, #8826e4 100%);
+  mix-blend-mode: screen;
+  border-radius: 20px;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  height: 150px;
+  margin-left: 2rem;
+  position: relative;
+}
+
+.first-card--image {
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  right: 0.5rem;
+}
+
+.first-card--text {
+  position: absolute;
+  color: white;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  width: 50%;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+}
+
+.first-item--footer-text {
+  color: white;
+  opacity: 0.4;
+  margin-left: 2.5rem;
+  margin-top: 5px;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+}
+
+.second-card-container {
+  border-radius: 20px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background: rgb(46, 165, 101);
+  box-shadow: 0px 9px 63px 1px rgba(46, 165, 101, 0.8);
+  -webkit-box-shadow: 0px 9px 63px 1px rgba(46, 165, 101, 0.8);
+  -moz-box-shadow: 0px 9px 63px 1px rgba(46, 165, 101, 0.8);
+}
+
+.second-card--image {
+  border-radius: 20px;
+}
+
+.second-card--text {
+  position: absolute;
+  color: white;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+  font-size: 1.3rem;
+  width: 30%;
+  margin-left: 1rem;
+}
+
+.exit-migraine-button-container {
+  margin-bottom: 7rem;
+  text-align: center;
+  ion-button {
+    font-size: 0.5rem;
+    --background: #8826e4;
+  }
+}

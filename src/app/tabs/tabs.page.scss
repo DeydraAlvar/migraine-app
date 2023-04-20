@@ -1,5 +1,5 @@
 .migraine-button {
-  width: 70px;
+  width: 60px;
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -16,9 +16,11 @@ ion-label {
 }
 
 ion-tab-bar {
-  --background: transparent;
-  --ion-color-base: transparent !important;
+  --background: rgba(0, 0, 0, 0.5);
+  --ion-color-base: rgba(0, 0, 0, 0.5)!important;
   --color-selected: #8826E4 !important;
+  
+  --color:white;
   position: absolute;
   bottom: 0px;
   width: 100%;

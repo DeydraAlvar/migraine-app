@@ -1,4 +1,38 @@
+<ion-content
+  [ngClass]="migraineS ? 'migraine-ion-content' : 'no-migraine-ion-content'"
+  [fullscreen]="true"
+>
+  <ion-item lines="none" class="person-item">
+    <ion-avatar slot="start">
+      <img src="../../assets/images/person-pic.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h3 class="person-name">Maddy Jones</h3>
+      <p>Last active Apr.14</p>
+    </ion-label>
+  </ion-item>
 
-<ion-content [fullscreen]="true">
+  <h1 class="feed-title">Take some time for yourself today.</h1>
 
+  <div class="first-card-container">
+    <p class="first-card--text">Setup automations</p>
+    <img
+      class="first-card--image"
+      src="../../assets/images/firt-card-background.png"
+    />
+  </div>
+  <p class="first-item--footer-text">Set up your migraine automations</p>
+
+  <div class="second-card-container">
+    <p class="second-card--text">Tips for migraine relief</p>
+
+    <img
+      class="second-card--image"
+      src="../../assets/images/second-card-background.jpeg"
+    />
+  </div>
+  <p class="first-item--footer-text">Green light for migraine relief</p>
+  <div class="exit-migraine-button-container">
+    <ion-button *ngIf="migraineS" (click)="exitMigraineMode()"> Exit Migraine Mode</ion-button>
+  </div>
 </ion-content>
