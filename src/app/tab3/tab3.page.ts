@@ -122,6 +122,6 @@ export class Tab3Page {
 
 
   public showMigraineActiveAlert(){
-    alert("Migraine Mode is ON");
+    alert("Green Mode is ON");
   }
 }
