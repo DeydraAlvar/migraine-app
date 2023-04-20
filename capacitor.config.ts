@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'pfizer-migraine',
+  appName: 'Migraine Assist',
   webDir: 'www',
   bundledWebRuntime: false
 };

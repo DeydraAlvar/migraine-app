@@ -1,7 +1,8 @@
 {
-  "name": "pfizer-migraine",
+  "name": "Migraine Assist",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
