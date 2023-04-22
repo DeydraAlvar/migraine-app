@@ -1,2 +1,50 @@
+<ion-header id="page-header" class="ion-no-border">
+  <ion-toolbar
+    [ngClass]="migraineS ? 'ion-toolbar-green ' : 'ion-toolbar-black'"
+    __toolbar
+  >
+    <ion-title
+      id="cough-recording-title"
+      class="ion-text-center"
+      color="primary"
+      __page-title
+    >
+      Journal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content
+  [ngClass]="migraineS ? 'migraine-ion-content' : 'no-migraine-ion-content'"
+  [fullscreen]="true"
+>
+  <h2 class="page-title">Your current migraine risk is low.</h2>
 
+  <h3 class="page-subtitle">Today</h3>
+  <div class="entry margin-at-botton">
+    <ion-label class="add-label"
+      ><ion-icon *ngIf="!migraineS" src="../../assets/images/plus-icon-purple.svg"></ion-icon>
+      <ion-icon  *ngIf="migraineS" src="../../assets/images/plus-icon.svg"></ion-icon>
+      <p [ngClass]="migraineS ? 'white-text' : 'purple-text'">Add entry</p></ion-label
+    >
+  </div>
+  <h3 class="page-subtitle">Last Week</h3>
+  <div class="entry">
+      <ion-label>
+          <p class="entry-title">Status</p>
+          <h3 class="entry-desc">Okay</h3>
+      </ion-label>
+  </div>
+  <div class="entry">
+    <ion-label>
+        <p class="entry-title">Status</p>
+        <h3 class="entry-desc">Great</h3>
+    </ion-label>
+</div>
+<div class="entry">
+    <ion-label>
+        <p class="entry-title">Status</p>
+        <h3 class="entry-desc">Stressed</h3>
+    </ion-label>
+</div>
+</ion-content>

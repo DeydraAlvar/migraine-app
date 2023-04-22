@@ -1,0 +1,47 @@
+<ion-header id="page-header" class="ion-no-border">
+  <ion-toolbar
+    [ngClass]="migraineS ? 'ion-toolbar-green ' : 'ion-toolbar-black'"
+    __toolbar
+  >
+    <ion-title
+      id="cough-recording-title"
+      class="ion-text-center"
+      color="primary"
+      __page-title
+    >
+      Applets
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  [ngClass]="migraineS ? 'migraine-ion-content' : 'no-migraine-ion-content'"
+  [fullscreen]="true"
+>
+  <h2 class="page-subtitle">All you have to say is “I have a migraine”.</h2>
+
+  <ion-segment mode="md" value="family">
+    <ion-segment-button (click)="changeApplets(0)" value="family">
+      <ion-label>Family</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeApplets(1)" value="work">
+      <ion-label>Work</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeApplets(2)" value="me">
+      <ion-label>Me</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+    <h3 class="applets-description">{{currentApplets.section}}</h3>
+    <div class="applets-container">
+      <div  *ngFor="let applet of currentApplets.applets; let i = index;" class="applet-container">
+        <div (click)="changeStatus(i)"  class="applet-card"  [ngClass]="getCardClass(i)">
+          <ion-label>
+            <ion-icon class="applet-icon" src="{{applet.icon}}"></ion-icon>
+            <p class="applet-title">{{applet.name}}</p>
+          </ion-label>
+        </div>
+        <p class="applet-description">{{applet.description}}</p>
+      </div>
+    </div>
+</ion-content>

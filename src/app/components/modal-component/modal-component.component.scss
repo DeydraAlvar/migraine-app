@@ -1,0 +1,36 @@
+.modal-title {
+  color: rgba(4, 69, 6, 1);
+  font-size: 1.3rem;
+  font-family: "Noto Sans";
+  font-weight: bolder;
+}
+
+.modal-description {
+  color: rgba(4, 69, 6, 1);
+  font-family: "Noto Sans";
+}
+
+.modal-next-button {
+  --background: white;
+  --box-shadow: none;
+}
+
+.next-button-text{
+    color: rgba(136, 38, 228, 1);
+    margin-right: 12px;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.modal-turn-off-button{
+    background: none;
+    font-size: 1.2rem;
+    color: rgba(170, 190, 177, 1);
+}

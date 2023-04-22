@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
-import { IonicModule, Platform } from "@ionic/angular";
+import { IonContent, IonicModule, Platform } from "@ionic/angular";
 
 @Component({
   selector: "app-tab5",
@@ -12,6 +12,7 @@ import { IonicModule, Platform } from "@ionic/angular";
 export class Tab5Page {
 
   @ViewChild("animation") image: ElementRef;
+  @ViewChild(IonContent) content: IonContent;
   @ViewChild("pin1") pin1: ElementRef;
   @ViewChild("pin2") pin2: ElementRef;
   @ViewChild("pin3") pin3: ElementRef;
@@ -40,6 +41,8 @@ export class Tab5Page {
     setTimeout(() => {
       // this.render.removeClass(this.image.nativeElement, "zoomIn");
       this.render.addClass(this.image.nativeElement, "city-map");
+      this.content.scrollToPoint(300,850);
+
     }, 2300);
 
   }
@@ -50,6 +53,8 @@ export class Tab5Page {
     this.removeViewClasses();
     this.removeAnimatedClasses();
     clearInterval(this.timeintervalID);
+    this.content.scrollToPoint(0,0);
+
 
   }
 
@@ -72,12 +77,16 @@ export class Tab5Page {
     if(this.recordingSeconds === 3){
       this.render.addClass(this.pin1.nativeElement, "animate-pin");
       this.render.addClass(this.pin1.nativeElement, "activated-pin");
+      this.render.addClass(this.pin1.nativeElement, "move-pin-animation-1");
+
 
     }
 
     if(this.recordingSeconds === 4){
       this.render.addClass(this.pin4.nativeElement, "animate-pin");
       this.render.addClass(this.pin4.nativeElement, "activated-pin");
+      this.render.addClass(this.pin4.nativeElement, "move-pin-animation-4");
+
 
       this.render.addClass(this.pin7.nativeElement, "animate-pin");
       this.render.addClass(this.pin7.nativeElement, "activated-pin");
@@ -88,6 +97,7 @@ export class Tab5Page {
     if(this.recordingSeconds === 4.5){
       this.render.addClass(this.pin6.nativeElement, "animate-pin");
       this.render.addClass(this.pin6.nativeElement, "activated-pin");
+      this.render.addClass(this.pin6.nativeElement, "move-pin-animation-5");
 
       this.render.addClass(this.pin10.nativeElement, "animate-pin");
       this.render.addClass(this.pin10.nativeElement, "activated-pin");
@@ -98,6 +108,8 @@ export class Tab5Page {
     if(this.recordingSeconds === 5){
       this.render.addClass(this.pin2.nativeElement, "animate-pin");
       this.render.addClass(this.pin2.nativeElement, "activated-pin");
+      this.render.addClass(this.pin2.nativeElement, "move-pin-animation-2");
+
 
       this.render.addClass(this.pin8.nativeElement, "animate-pin");
       this.render.addClass(this.pin8.nativeElement, "activated-pin");
@@ -108,12 +120,16 @@ export class Tab5Page {
     if(this.recordingSeconds === 5.5){
       this.render.addClass(this.pin3.nativeElement, "animate-pin");
       this.render.addClass(this.pin3.nativeElement, "activated-pin");
+      this.render.addClass(this.pin3.nativeElement, "move-pin-animation-3");
+
 
     }
 
     if(this.recordingSeconds === 6){
       this.render.addClass(this.pin5.nativeElement, "animate-pin");
       this.render.addClass(this.pin5.nativeElement, "activated-pin");
+      this.render.addClass(this.pin5.nativeElement, "move-pin-animation-6");
+
 
     }
 
@@ -126,6 +142,11 @@ export class Tab5Page {
     
     if (this.recordingSeconds >= 8) {
       this.removeAnimatedClasses();
+
+
+
+
+
       clearInterval(this.timeintervalID);
     }
   }
@@ -172,4 +193,5 @@ export class Tab5Page {
 
 
   }
+
 }

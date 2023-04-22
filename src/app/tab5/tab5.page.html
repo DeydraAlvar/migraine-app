@@ -1,30 +1,98 @@
-<ion-content>
-  <ion-header class="map-header">
-    <ion-toolbar class="map-toolbar">
-      <ion-title size="large">Trigger Map</ion-title>
-    </ion-toolbar>
-    </ion-header>
-    <img #animation class="world-map"/>
+<ion-header class="map-header">
+  <ion-toolbar class="map-toolbar">
+    <ion-title size="large">Trigger Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content id="contentt" scroll-x="true" [fullscreen]="true">
+  <div id="city" class="img-container">
+    <img #animation class="world-map" />
+ 
 
+  <img
+    #pin1
+    id="pin1"
+    (click)="clickPin($event)"
+    class="green-pin-1"
+    src="../../assets/images/green-pin.svg"
+  />
+  <img
+    #pin2
+    id="pin2"
+    (click)="clickPin($event)"
+    class="green-pin-2"
+    src="../../assets/images/green-pin.svg"
+  />
+  <img
+    #pin3
+    id="pin3"
+    (click)="clickPin($event)"
+    class="green-pin-3"
+    src="../../assets/images/green-pin.svg"
+  />
+  <img
+    #pin4
+    id="pin4"
+    (click)="clickPin($event)"
+    class="green-pin-4"
+    src="../../assets/images/green-pin.svg"
+  />
+  <img
+    #pin5
+    id="pin5"
+    (click)="clickPin($event)"
+    class="green-pin-5"
+    src="../../assets/images/green-pin.svg"
+  />
+  <img
+    #pin6
+    id="pin6"
+    (click)="clickPin($event)"
+    class="green-pin-6"
+    src="../../assets/images/green-pin.svg"
+  />
 
-    <img #pin1 id="pin1" (click)="clickPin($event)" class="green-pin-1" src="../../assets/images/green-pin.svg"/>
-    <img #pin2 id="pin2" (click)="clickPin($event)" class="green-pin-2" src="../../assets/images/green-pin.svg"/>
-    <img #pin3 id="pin3" (click)="clickPin($event)" class="green-pin-3" src="../../assets/images/green-pin.svg"/>
-    <img #pin4 id="pin4" (click)="clickPin($event)" class="green-pin-4" src="../../assets/images/green-pin.svg"/>
-    <img #pin5 id="pin5" (click)="clickPin($event)" class="green-pin-5" src="../../assets/images/green-pin.svg"/>
-    <img #pin6 id="pin6" (click)="clickPin($event)" class="green-pin-6" src="../../assets/images/green-pin.svg"/>
+  <img
+    #pin7
+    id="pin7"
+    (click)="clickPin($event)"
+    class="custom-pin-1"
+    src="../../assets/images/allergens-pin.svg"
+  />
+  <img
+    #pin8
+    id="pin8"
+    (click)="clickPin($event)"
+    class="custom-pin-2"
+    src="../../assets/images/noise-pin.svg"
+  />
+  <img
+    #pin9
+    id="pin9"
+    (click)="clickPin($event)"
+    class="custom-pin-3"
+    src="../../assets/images/smoke-pin.svg"
+  />
+  <img
+    #pin10
+    id="pin10"
+    (click)="clickPin($event)"
+    class="custom-pin-4"
+    src="../../assets/images/traffic-pin.svg"
+  />
 
-
-
-    <img #pin7 id="pin7" (click)="clickPin($event)" class="custom-pin-1" src="../../assets/images/allergens-pin.svg"/>
-    <img #pin8 id="pin8" (click)="clickPin($event)" class="custom-pin-2" src="../../assets/images/noise-pin.svg"/>
-    <img #pin9 id="pin9" (click)="clickPin($event)" class="custom-pin-3" src="../../assets/images/smoke-pin.svg"/>
-    <img #pin10 id="pin10" (click)="clickPin($event)" class="custom-pin-4" src="../../assets/images/traffic-pin.svg"/>
-
-    <img #pin11 id="pin11" (click)="clickPin($event)" class="purple-pin" src="../../assets/images/purple-pin.svg"/>
-    <img #pin12 id="pin12" (click)="clickPin($event)" class="trigger-pin" src="../../assets/images/big-trigger-pin.svg"/>
-
-
-
-  </ion-content>
-
+  <img
+    #pin11
+    id="pin11"
+    (click)="clickPin($event)"
+    class="purple-pin"
+    src="../../assets/images/purple-pin.svg"
+  />
+  <img
+    #pin12
+    id="pin12"
+    (click)="clickPin($event)"
+    class="trigger-pin"
+    src="../../assets/images/big-trigger-pin.svg"
+  />
+</div>
+</ion-content>

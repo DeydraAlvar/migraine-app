@@ -5,18 +5,20 @@ import {
   Renderer2,
   ViewChild,
 } from "@angular/core";
-import { IonicModule, Platform } from "@ionic/angular";
+import { IonicModule, Platform, PopoverController } from "@ionic/angular";
 import { SpeechRecognition } from "@capacitor-community/speech-recognition";
 import { NavController } from "@ionic/angular";
 import { MigraineStatusService } from "../services/migraine-status.service";
 import { CommonModule } from "@angular/common";
+import { popoverController } from "@ionic/core";
+import { ModalComponentComponent } from "../components/modal-component/modal-component.component";
 @Component({
   selector: "app-tab3",
   templateUrl: "tab3.page.html",
   styleUrls: ["tab3.page.scss"],
   standalone: true,
   imports: [IonicModule, CommonModule],
-  providers: [MigraineStatusService],
+  providers: [MigraineStatusService, PopoverController],
 })
 export class Tab3Page {
   @ViewChild("animation") image: ElementRef;
@@ -29,7 +31,8 @@ export class Tab3Page {
     public render: Renderer2,
     public nav: NavController,
     public migraineStatus: MigraineStatusService,
-    public changeDetector: ChangeDetectorRef
+    public changeDetector: ChangeDetectorRef,
+    public popover: PopoverController
   ) {}
 
   async ionViewWillEnter() {
@@ -81,6 +84,7 @@ export class Tab3Page {
             clearInterval(this.timeintervalID);
             this.migraineS = true;
             this.changeDetector.detectChanges();
+            this.showPopOver();
           }
         }
       );
@@ -120,8 +124,21 @@ export class Tab3Page {
     this.migraineStatus.setObject(true);
   }
 
-
-  public showMigraineActiveAlert(){
+  public showMigraineActiveAlert() {
     alert("Green Mode is ON");
+  }
+
+  public async showPopOver(){
+    const modal = await this.popover.create({
+      component: ModalComponentComponent,
+      mode: 'md',
+      cssClass:'modal-style'
+    });
+    await modal.present();
+    await modal.onDidDismiss().then(async ()=>{
+      this.migraineS = await this.migraineStatus.getObject();
+      this.changeDetector.detectChanges();
+      this.nav.navigateForward('/tabs/tab1');
+    })
   }
 }

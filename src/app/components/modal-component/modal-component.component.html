@@ -1,0 +1,14 @@
+<div class="modal-container">
+  <h1 class="modal-title">You have now entered green mode.</h1>
+  <p class="modal-description">
+    To return to normal mode, you can toggle off the “Go Green” applet, or say
+    “Turn off Green Mode” at any time.
+  </p>
+  <div class="buttons-container">
+    <button (click)="turnOffMigraine()" class="modal-turn-off-button">Turn off</button>
+    <ion-button (click)="dismiss()" class="modal-next-button">
+      <p class="next-button-text">Okay</p>
+      <ion-icon src="../../../assets/images/next.svg"></ion-icon>
+    </ion-button>
+  </div>
+</div>
