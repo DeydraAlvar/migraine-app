@@ -1,12 +1,13 @@
+import { CommonModule } from "@angular/common";
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
 import { IonContent, IonicModule, Platform } from "@ionic/angular";
-
+import { ChangeDetectorRef } from "@angular/core";
 @Component({
   selector: "app-tab5",
   templateUrl: "tab5.page.html",
   styleUrls: ["tab5.page.scss"],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, CommonModule],
   providers: [],
 })
 export class Tab5Page {
@@ -19,17 +20,52 @@ export class Tab5Page {
   @ViewChild("pin4") pin4: ElementRef;
   @ViewChild("pin5") pin5: ElementRef;
   @ViewChild("pin6") pin6: ElementRef;
-  @ViewChild("pin7") pin7: ElementRef;
-  @ViewChild("pin8") pin8: ElementRef;
-  @ViewChild("pin9") pin9: ElementRef;
-  @ViewChild("pin10") pin10: ElementRef;
   @ViewChild("pin11") pin11: ElementRef;
-  @ViewChild("pin12") pin12: ElementRef;
 
 
   public timeintervalID: any;
   public recordingSeconds = 0;
-  constructor(public render: Renderer2) {}
+  public triggers =[
+
+    {
+      closed: '../../assets/images/allergens-pin.svg',
+      opened: '../../assets/images/allergens-expanded.svg',
+      class:'custom-pin-1',
+      id: 'pin7',
+      showInfo : false
+    },
+    {
+      closed: '../../assets/images/noise-pin.svg',
+      opened: '../../assets/images/noise-expanded.svg',
+      class:'custom-pin-2',
+      id: 'pin8',
+      showInfo : false
+    },
+    {
+      closed: '../../assets/images/smoke-pin.svg',
+      opened: '../../assets/images/smoke-expanded.svg',
+      class:'custom-pin-3',
+      id: 'pin9',
+      showInfo : false
+    },
+    {
+      closed: '../../assets/images/traffic-pin.svg',
+      opened: '../../assets/images/traffic-expanded.svg',
+      class:'custom-pin-4',
+      id: 'pin10',
+      showInfo : false
+    },
+    {
+      closed: '../../assets/images/asphalt-pin.svg',
+      opened: '../../assets/images/asphalt-expanded.svg',
+      class:'trigger-pin',
+      id: 'pin12',
+      showInfo : false
+    },
+    
+  ]
+
+  constructor(public render: Renderer2, public cd : ChangeDetectorRef) {}
 
   ionViewWillEnter() {
     this.render.addClass(this.image.nativeElement, "world-map");
@@ -69,8 +105,8 @@ export class Tab5Page {
     }
 
     if(this.recordingSeconds === 2.5){
-      this.render.addClass(this.pin9.nativeElement, "animate-pin");
-      this.render.addClass(this.pin9.nativeElement, "activated-pin");
+      this.render.addClass(document.getElementById('pin9'), "animate-pin");
+      this.render.addClass(document.getElementById('pin9'), "activated-pin");
 
     }
 
@@ -88,8 +124,8 @@ export class Tab5Page {
       this.render.addClass(this.pin4.nativeElement, "move-pin-animation-4");
 
 
-      this.render.addClass(this.pin7.nativeElement, "animate-pin");
-      this.render.addClass(this.pin7.nativeElement, "activated-pin");
+      this.render.addClass(document.getElementById('pin7'), "animate-pin");
+      this.render.addClass(document.getElementById('pin7'), "activated-pin");
 
 
 
@@ -99,8 +135,8 @@ export class Tab5Page {
       this.render.addClass(this.pin6.nativeElement, "activated-pin");
       this.render.addClass(this.pin6.nativeElement, "move-pin-animation-5");
 
-      this.render.addClass(this.pin10.nativeElement, "animate-pin");
-      this.render.addClass(this.pin10.nativeElement, "activated-pin");
+      this.render.addClass(document.getElementById('pin10'), "animate-pin");
+      this.render.addClass(document.getElementById('pin10'), "activated-pin");
 
 
 
@@ -111,8 +147,8 @@ export class Tab5Page {
       this.render.addClass(this.pin2.nativeElement, "move-pin-animation-2");
 
 
-      this.render.addClass(this.pin8.nativeElement, "animate-pin");
-      this.render.addClass(this.pin8.nativeElement, "activated-pin");
+      this.render.addClass(document.getElementById('pin8'), "animate-pin");
+      this.render.addClass(document.getElementById('pin8'), "activated-pin");
 
 
 
@@ -134,8 +170,8 @@ export class Tab5Page {
     }
 
     if(this.recordingSeconds === 7){
-      this.render.addClass(this.pin12.nativeElement, "animate-pin");
-      this.render.addClass(this.pin12.nativeElement, "activated-pin");
+      this.render.addClass(document.getElementById('pin12'), "animate-pin");
+      this.render.addClass(document.getElementById('pin12'), "activated-pin");
 
 
     }
@@ -152,8 +188,12 @@ export class Tab5Page {
   }
 
   public clickPin(event: any){
-    console.log(event)
+    const triggerIndex = this.triggers.findIndex(trigger => trigger.id ===event.target.id);
+    this.triggers[triggerIndex].showInfo =  !this.triggers[triggerIndex].showInfo;
+    this.cd.detectChanges();
     this.render.addClass(document.getElementById(event.target.id), "click-pin-animation");
+    this.render.addClass(document.getElementById(event.target.id), "activated-pin");
+
     setTimeout(() => {
       this.render.removeClass(document.getElementById(event.target.id), "click-pin-animation");
     }, 500);
@@ -166,12 +206,12 @@ export class Tab5Page {
     this.render.removeClass(this.pin4.nativeElement, "animate-pin");
     this.render.removeClass(this.pin5.nativeElement, "animate-pin");
     this.render.removeClass(this.pin6.nativeElement, "animate-pin");
-    this.render.removeClass(this.pin7.nativeElement, "animate-pin");
-    this.render.removeClass(this.pin8.nativeElement, "animate-pin");
-    this.render.removeClass(this.pin9.nativeElement, "animate-pin");
-    this.render.removeClass(this.pin10.nativeElement, "animate-pin");
+    this.render.removeClass(document.getElementById('pin7'), "animate-pin");
+    this.render.removeClass(document.getElementById('pin8'), "animate-pin");
+    this.render.removeClass(document.getElementById('pin9'), "animate-pin");
+    this.render.removeClass(document.getElementById('pin10'), "animate-pin");
     this.render.removeClass(this.pin11.nativeElement, "animate-pin");
-    this.render.removeClass(this.pin12.nativeElement, "animate-pin");
+    this.render.removeClass(document.getElementById('pin12'), "animate-pin");
 
 
   }
@@ -184,12 +224,12 @@ export class Tab5Page {
     this.render.removeClass(this.pin4.nativeElement, "activated-pin");
     this.render.removeClass(this.pin5.nativeElement, "activated-pin");
     this.render.removeClass(this.pin6.nativeElement, "activated-pin");
-    this.render.removeClass(this.pin7.nativeElement, "activated-pin");
-    this.render.removeClass(this.pin8.nativeElement, "activated-pin");
-    this.render.removeClass(this.pin9.nativeElement, "activated-pin");
-    this.render.removeClass(this.pin10.nativeElement, "activated-pin");
+    this.render.removeClass(document.getElementById('pin7'), "activated-pin");
+    this.render.removeClass(document.getElementById('pin8'), "activated-pin");
+    this.render.removeClass(document.getElementById('pin9'), "activated-pin");
+    this.render.removeClass(document.getElementById('pin10'), "activated-pin");
     this.render.removeClass(this.pin11.nativeElement, "activated-pin");
-    this.render.removeClass(this.pin12.nativeElement, "activated-pin");
+    this.render.removeClass(document.getElementById('pin12'), "activated-pin");
 
 
   }

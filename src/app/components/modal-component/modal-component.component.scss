@@ -13,11 +13,13 @@
 .modal-next-button {
   --background: white;
   --box-shadow: none;
+  padding-inline-end: 0;
+  min-width: 40%;
 }
 
 .next-button-text{
     color: rgba(136, 38, 228, 1);
-    margin-right: 12px;
+    padding-right: 12px;
     text-transform: capitalize;
     font-size: 1.3rem;
 
@@ -33,4 +35,8 @@
     background: none;
     font-size: 1.2rem;
     color: rgba(170, 190, 177, 1);
+}
+
+.button-icon{
+  min-width: 25%;
 }
